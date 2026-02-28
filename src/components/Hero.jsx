@@ -85,12 +85,24 @@ const Hero = () => {
               <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-teal-100 to-teal-200 rounded-bl-full opacity-50"></div>
               
               <div className="relative z-10 space-y-6">
-                {/* Doctor Image Placeholder */}
-                <div className="w-48 h-48 mx-auto bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl flex items-center justify-center border-4 border-white shadow-lg">
-                  <div className="text-center">
-                    <p className="text-gray-400 text-sm">Doctor's Photo</p>
-                    <p className="text-gray-300 text-xs mt-1">Placeholder</p>
-                  </div>
+                {/* Doctor Image */}
+                <div className="w-48 h-48 mx-auto rounded-2xl overflow-hidden border-4 border-white shadow-lg bg-gray-100 flex items-center justify-center">
+                  <img
+                    src={doctorInfo.image || '/default-avatar.svg'}
+                    alt={`${doctorInfo.name} photo`}
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      try {
+                        const el = e.currentTarget;
+                        if (!el.dataset.fallback) {
+                          el.dataset.fallback = '1';
+                          el.src = '/default-avatar.svg';
+                        }
+                      } catch (err) {
+                        /* ignore */
+                      }
+                    }}
+                  />
                 </div>
 
                 {/* Doctor Info */}

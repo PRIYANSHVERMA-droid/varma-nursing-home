@@ -7,6 +7,8 @@ export const doctorInfo = {
   qualificationHindi: "एम.डी. (मेडिसिन)",
   designation: "Physician / फिजिशियन",
   regNo: "MCI 22821",
+  // Path to doctor's image placed in the public folder (add doctor.png there)
+  image: "/doctor.png",
   phone: "9456265918",
   whatsapp: "919456265918", // with country code for WhatsApp
 };

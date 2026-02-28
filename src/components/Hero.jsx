@@ -86,12 +86,12 @@ const Hero = () => {
               
               <div className="relative z-10 space-y-6">
                 {/* Doctor Image */}
-                <div className="w-48 h-48 mx-auto rounded-2xl overflow-hidden border-4 border-white shadow-lg bg-gray-100 flex items-center justify-center p-2">
+                <div className="w-48 h-48 mx-auto rounded-2xl overflow-hidden border-4 border-white shadow-lg bg-gray-100 flex items-center justify-center p-3">
                   <img
                     src={doctorInfo.image || '/default-avatar.svg'}
                     alt={`${doctorInfo.name} photo`}
                     className="w-full h-full object-cover rounded-lg"
-                    style={{ objectPosition: '50% 35%' }}
+                    style={{ objectPosition: '50% 45%' }}
                     onError={(e) => {
                       try {
                         const el = e.currentTarget;
